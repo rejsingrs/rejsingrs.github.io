@@ -317,14 +317,7 @@ a{color:inherit}
 .lang svg{width:22px;height:14px;display:block;outline:1px solid rgba(127,127,127,.4)}
 @media (max-width:860px){.lang{margin-left:auto}.lap{margin-left:12px}}
 @media (max-width:420px){.lang span{display:none}.sectors{display:none}}
-/* innovation + buy/rent */
-.innov{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;margin-top:clamp(64px,8vw,110px);padding:34px 0;border-top:1px solid var(--night-line);border-bottom:1px solid var(--night-line)}
-.innov h3{margin:0;font-weight:900;font-variation-settings:"wdth" 118;font-size:clamp(24px,3vw,38px);line-height:1.05}
-.innov p{margin:12px 0 0;max-width:60ch;color:var(--night-muted);font-size:17px}
-.innov-mark{display:flex;gap:4px;padding-top:10px}
-.innov-mark i{display:block;width:14px;height:14px;background:var(--green-lit)}
-.innov-mark i:nth-child(2){opacity:.6}.innov-mark i:nth-child(3){opacity:.3}
-@media (max-width:700px){.innov{grid-template-columns:1fr;gap:12px}}
+/* buy/rent */
 .offer{margin-top:clamp(64px,8vw,110px)}
 .offer > h3{margin:0 0 28px;font-weight:900;font-variation-settings:var(--wide);font-size:clamp(30px,4.4vw,60px);line-height:1;letter-spacing:-.015em;max-width:18ch}
 .offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -362,7 +355,7 @@ a{color:inherit}
 @media (max-width:820px){.bs-text{grid-template-columns:minmax(0,1fr)}}
 
 .race .ph img,.shot .ph img{width:100%;height:100%;object-fit:cover;display:block}
-.race .ph.multi{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;background:#000}
+.race .ph.multi{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:4px;background:#000}
 .race .ph.multi img:first-child{grid-row:1 / 3}
 .race .race-links{margin-top:18px}
 
@@ -402,11 +395,14 @@ a{color:inherit}
 .rs-note{color:#9AA39E;font-size:14px;margin-top:18px;max-width:none}
 .rs-dl a{color:#1EAA4B;font-weight:700}
 .race .rs-open{margin-top:18px}
+.tbl.rs .rn{color:#9AA39E}
+.rs-runs .st{font-size:14px}
+.board-empty{margin:0;padding:26px 0;border-bottom:1px solid var(--night-line);font-size:18px;color:var(--night-muted)}
 
 .tbl.rs .nm-c{display:none}
 @media (max-width:620px){
   .tbl.rs{min-width:0}
-  .tbl.rs .cl,.tbl.rs .cp{display:none}
+  .tbl.rs .cl,.tbl.rs .cp,.tbl.rs .rn{display:none}
   .tbl.rs .nm-c{display:block;font-weight:400;color:#9AA39E;font-size:12.5px}
   .tbl.rs td{padding:9px 8px;white-space:normal}
   .tbl.rs td.tm,.tbl.rs td.gp{white-space:nowrap}
@@ -582,14 +578,6 @@ a{color:inherit}
         </div>
       </div>
 
-      <div class="innov">
-        <div class="innov-mark" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div>
-          <h3 data-i18n="in_h">Stalno razvijamo nešto novo</h3>
-          <p data-i18n="in_p">Neprestano dodajemo nove načine merenja vremena i unapređujemo sistem. Svaka trka koju merimo donosi nam ideju za sledeće poboljšanje.</p>
-        </div>
-      </div>
-
       <div class="offer" id="rent-buy">
         <h3 data-i18n="of_h">Iznajmite ili kupite naš sistem</h3>
         <div class="offer-grid">
@@ -646,6 +634,20 @@ a{color:inherit}
       <div class="races">
         <article class="race">
           <div class="ph multi">
+            <img src="slike/sopot-stilo.jpg" width="1200" height="1600" loading="lazy" alt="Fiat Stilo izlazi iz krivine na mokroj stazi u Sopotu" data-i18n-alt="alt_sp_stilo">
+            <img src="slike/sopot-fica.jpg" width="1200" height="1600" loading="lazy" alt="Trkački Fiat 600 broj 68 između guma na stazi u Sopotu" data-i18n-alt="alt_sp_fica">
+            <img src="slike/sopot-golf.jpg" width="1200" height="1600" loading="lazy" alt="VW Golf 1 na stazi u Sopotu po magli" data-i18n-alt="alt_sp_golf">
+          </div>
+          <div class="race-meta"><div><h3 data-i18n="r0">Sopot</h3><div class="when" data-i18n="r0d">Nedelja, 11. oktobar 2026, Sopot</div></div></div>
+          <dl>
+            <div><dt data-i18n="dt1">Vozača</dt><dd>31</dd></div>
+            <div><dt data-i18n="dt2b">Najbrže vreme</dt><dd>1:03.961</dd></div>
+            <div><dt data-i18n="dt4">Klasa</dt><dd>10</dd></div>
+          </dl>
+          <a class="btn btn-go rs-open" href="#rezultati-sopot" data-i18n="rl1">Pogledajte rezultate</a>
+        </article>
+        <article class="race">
+          <div class="ph multi">
             <img src="slike/novi-sad-bmw.jpg" width="1200" height="750" loading="lazy" alt="BMW E36 u krivini na trci na Sajmu u Novom Sadu" data-i18n-alt="alt_bmw">
             <img src="slike/novi-sad-golf.jpg" width="1200" height="750" loading="lazy" alt="VW Golf na stazi na Sajmu u Novom Sadu" data-i18n-alt="alt_golf">
             <img src="slike/novi-sad-yugo.jpg" width="1200" height="750" loading="lazy" alt="Yugo prolazi pored guma na stazi na Sajmu u Novom Sadu" data-i18n-alt="alt_yugo">
@@ -679,12 +681,7 @@ a{color:inherit}
         </div>
       </div>
       <div class="board">
-        <div class="board-row" data-date="2026-10-11">
-          <div class="board-date"><span data-i18n="c1d">11. okt</span><small data-i18n="c1w">Nedelja, 2026</small></div>
-          <div><h3 data-i18n="c1">Sopot</h3><p class="muted" data-i18n="c1p">Merenje vremena: Rejsing</p></div>
-          <div class="venue"><p>Sopot</p></div>
-          <div class="board-count"><span class="cd"></span><small data-i18n="cd_s">do starta</small></div>
-        </div>
+        <p class="board-empty" data-i18n="c_empty">Sledeće trke objavljujemo uskoro. Pratite nas na Instagramu.</p>
       </div>
       <p class="board-note muted" data-i18n="c_note">Organizujete trku? <a href="#contact">Rezervišite nas za svoj datum</a></p>
     </div>
@@ -695,9 +692,13 @@ a{color:inherit}
     <div class="gal-pin">
       <div class="wrap gal-head">
         <div><div class="sector-tag" style="margin-bottom:18px">S4</div><h2 id="gal-title" data-i18n="g_h">Sa staze</h2></div>
-        <div class="gal-count num" id="galCount" aria-hidden="true">1 / 4</div>
+        <div class="gal-count num" id="galCount" aria-hidden="true">1 / 8</div>
       </div>
       <div class="strip" id="strip">
+        <figure class="shot tall"><div class="ph"><img src="slike/sopot-stilo.jpg" width="1200" height="1600" loading="lazy" alt="Fiat Stilo izlazi iz krivine" data-i18n-alt="alt_sp_stilo"></div><figcaption><b data-i18n="g5">Kroz gume</b><span data-i18n="r0">Sopot</span></figcaption></figure>
+        <figure class="shot tall"><div class="ph"><img src="slike/sopot-fica.jpg" width="1200" height="1600" loading="lazy" alt="Trkački Fiat 600 broj 68" data-i18n-alt="alt_sp_fica"></div><figcaption><b data-i18n="g6">Fića na mokrom</b><span data-i18n="r0">Sopot</span></figcaption></figure>
+        <figure class="shot tall"><div class="ph"><img src="slike/sopot-golf.jpg" width="1200" height="1600" loading="lazy" alt="VW Golf 1 na stazi" data-i18n-alt="alt_sp_golf"></div><figcaption><b data-i18n="g7">Golf u magli</b><span data-i18n="r0">Sopot</span></figcaption></figure>
+        <figure class="shot tall"><div class="ph"><img src="slike/sopot-stand.jpg" width="1200" height="1600" loading="lazy" alt="Šator za merenje vremena sa ekranom za rezultate" data-i18n-alt="alt_sp_stand"></div><figcaption><b data-i18n="g8">Ekran sa rezultatima</b><span data-i18n="r0">Sopot</span></figcaption></figure>
         <figure class="shot"><div class="ph"><img src="slike/novi-sad-bmw.jpg" width="1200" height="750" loading="lazy" alt="BMW E36 u krivini" data-i18n-alt="alt_bmw"></div><figcaption><b data-i18n="g1">Krivina</b><span data-i18n="r1">Sajam Novi Sad</span></figcaption></figure>
         <figure class="shot"><div class="ph"><img src="slike/novi-sad-golf.jpg" width="1200" height="750" loading="lazy" alt="VW Golf na stazi" data-i18n-alt="alt_golf"></div><figcaption><b data-i18n="g2">Pun gas</b><span data-i18n="r1">Sajam Novi Sad</span></figcaption></figure>
         <figure class="shot"><div class="ph"><img src="slike/novi-sad-yugo.jpg" width="1200" height="750" loading="lazy" alt="Yugo na stazi" data-i18n-alt="alt_yugo"></div><figcaption><b data-i18n="g3">Klasika protiv sata</b><span data-i18n="r1">Sajam Novi Sad</span></figcaption></figure>
@@ -952,6 +953,23 @@ a{color:inherit}
 </section>
 
 
+<!-- ================= RESULTS: Sopot, 11.10.2026 ================= -->
+<section class="sheet results-sheet" id="rezultati-sopot" aria-labelledby="rs0-title">
+  <div class="sheet-in rs-in">
+    <a class="close" href="#races" data-i18n="close">Zatvori</a>
+    <div class="rs-kicker" data-i18n="rs_kick">Rezultati</div>
+    <h2 id="rs0-title" data-i18n="r0">Sopot</h2>
+    <p class="rs-sub" data-i18n="rs0_sub">Nedelja, 11. oktobar 2026. 31 vozač, 10 klasa. Ukupno vreme je zbir dve vožnje.</p>
+    <div class="podium"><div class="pod pod1"><div class="pod-n">1.</div><div class="pod-name">Luka Batančev</div><div class="pod-meta"><span class="cls-name">Klasa</span> 5</div><div class="pod-t num">2:08.687</div></div><div class="pod pod2"><div class="pod-n">2.</div><div class="pod-name">Stefan Stijović</div><div class="pod-meta"><span class="cls-name">Klasa</span> 3</div><div class="pod-t num">2:14.532</div></div><div class="pod pod3"><div class="pod-n">3.</div><div class="pod-name">Igor Ćuk</div><div class="pod-meta"><span class="cls-name">Klasa</span> 2</div><div class="pod-t num">2:14.541</div></div></div>
+    <div class="rs-chips"><button class="rs-chip on" data-c="all" type="button" data-i18n="rs_all">Sve klase</button><button class="rs-chip" data-c="1" type="button"><span class="cls-name">Klasa</span> 1</button><button class="rs-chip" data-c="2" type="button"><span class="cls-name">Klasa</span> 2</button><button class="rs-chip" data-c="3" type="button"><span class="cls-name">Klasa</span> 3</button><button class="rs-chip" data-c="4" type="button"><span class="cls-name">Klasa</span> 4</button><button class="rs-chip" data-c="5" type="button"><span class="cls-name">Klasa</span> 5</button><button class="rs-chip" data-c="6" type="button"><span class="cls-name">Klasa</span> 6</button><button class="rs-chip" data-c="7" type="button"><span class="cls-name">Klasa</span> 7</button><button class="rs-chip" data-c="8" type="button"><span class="cls-name">Klasa</span> 8</button><button class="rs-chip" data-c="fica" type="button"><span class="cls-x" data-en="Fića Cup">Fića kup</span></button><button class="rs-chip" data-c="nov" type="button"><span class="cls-x" data-en="Press">Novinar</span></button></div>
+    <div class="tbl-wrap rs-table"><table class="tbl rs rs-runs">
+<thead><tr><th data-i18n="rs_th1">Poz.</th><th data-i18n="rs_th2">Vozač</th><th class="cl" data-i18n="rs_th3">Klasa</th><th class="r cp" data-i18n="rs_th4">U klasi</th><th class="r" data-i18n="rs_th7">Ukupno</th><th class="r rn" data-i18n="rs_th8">1. vožnja</th><th class="r rn" data-i18n="rs_th9">2. vožnja</th><th class="r" data-i18n="rs_th6">Razlika</th></tr></thead>
+<tbody><tr data-c="5" class="p1"><td class="pos">1</td><td class="nm">Luka Batančev<small class="nm-c"><span class="cls-name">Klasa</span> 5 · 1:03.961 + 1:04.726</small></td><td class="cl"><span class="cls-name">Klasa</span> 5</td><td class="r cp">1</td><td class="r tm">2:08.687</td><td class="r rn">1:03.961</td><td class="r rn">1:04.726</td><td class="r gp"></td></tr><tr data-c="3" class="p2"><td class="pos">2</td><td class="nm">Stefan Stijović<small class="nm-c"><span class="cls-name">Klasa</span> 3 · 1:06.007 + 1:08.525</small></td><td class="cl"><span class="cls-name">Klasa</span> 3</td><td class="r cp">1</td><td class="r tm">2:14.532</td><td class="r rn">1:06.007</td><td class="r rn">1:08.525</td><td class="r gp">+5.845</td></tr><tr data-c="2" class="p3"><td class="pos">3</td><td class="nm">Igor Ćuk<small class="nm-c"><span class="cls-name">Klasa</span> 2 · 1:06.751 + 1:07.790</small></td><td class="cl"><span class="cls-name">Klasa</span> 2</td><td class="r cp">1</td><td class="r tm">2:14.541</td><td class="r rn">1:06.751</td><td class="r rn">1:07.790</td><td class="r gp">+5.854</td></tr><tr data-c="3"><td class="pos">4</td><td class="nm">Vova Lučić<small class="nm-c"><span class="cls-name">Klasa</span> 3 · 1:07.602 + 1:07.859</small></td><td class="cl"><span class="cls-name">Klasa</span> 3</td><td class="r cp">2</td><td class="r tm">2:15.461</td><td class="r rn">1:07.602</td><td class="r rn">1:07.859</td><td class="r gp">+6.774</td></tr><tr data-c="5"><td class="pos">5</td><td class="nm">Andreja Anđelski<small class="nm-c"><span class="cls-name">Klasa</span> 5 · 1:07.094 + 1:08.660</small></td><td class="cl"><span class="cls-name">Klasa</span> 5</td><td class="r cp">2</td><td class="r tm">2:15.754</td><td class="r rn">1:07.094</td><td class="r rn">1:08.660</td><td class="r gp">+7.067</td></tr><tr data-c="4"><td class="pos">6</td><td class="nm">Milan Kostadinović<small class="nm-c"><span class="cls-name">Klasa</span> 4 · 1:08.113 + 1:08.323</small></td><td class="cl"><span class="cls-name">Klasa</span> 4</td><td class="r cp">1</td><td class="r tm">2:16.436</td><td class="r rn">1:08.113</td><td class="r rn">1:08.323</td><td class="r gp">+7.749</td></tr><tr data-c="4"><td class="pos">7</td><td class="nm">Dragoje Janković<small class="nm-c"><span class="cls-name">Klasa</span> 4 · 1:07.763 + 1:08.843</small></td><td class="cl"><span class="cls-name">Klasa</span> 4</td><td class="r cp">2</td><td class="r tm">2:16.606</td><td class="r rn">1:07.763</td><td class="r rn">1:08.843</td><td class="r gp">+7.919</td></tr><tr data-c="3"><td class="pos">8</td><td class="nm">Nemanja Đurić<small class="nm-c"><span class="cls-name">Klasa</span> 3 · 1:08.378 + 1:08.549</small></td><td class="cl"><span class="cls-name">Klasa</span> 3</td><td class="r cp">3</td><td class="r tm">2:16.927</td><td class="r rn">1:08.378</td><td class="r rn">1:08.549</td><td class="r gp">+8.240</td></tr><tr data-c="7"><td class="pos">9</td><td class="nm">Ivan Karić<small class="nm-c"><span class="cls-name">Klasa</span> 7 · 1:08.310 + 1:08.838</small></td><td class="cl"><span class="cls-name">Klasa</span> 7</td><td class="r cp">1</td><td class="r tm">2:17.148</td><td class="r rn">1:08.310</td><td class="r rn">1:08.838</td><td class="r gp">+8.461</td></tr><tr data-c="3"><td class="pos">10</td><td class="nm">Budimir Jovašević<small class="nm-c"><span class="cls-name">Klasa</span> 3 · 1:08.036 + 1:09.692</small></td><td class="cl"><span class="cls-name">Klasa</span> 3</td><td class="r cp">4</td><td class="r tm">2:17.728</td><td class="r rn">1:08.036</td><td class="r rn">1:09.692</td><td class="r gp">+9.041</td></tr><tr data-c="2"><td class="pos">11</td><td class="nm">Stefan Vidović<small class="nm-c"><span class="cls-name">Klasa</span> 2 · 1:08.423 + 1:10.771</small></td><td class="cl"><span class="cls-name">Klasa</span> 2</td><td class="r cp">2</td><td class="r tm">2:19.194</td><td class="r rn">1:08.423</td><td class="r rn">1:10.771</td><td class="r gp">+10.507</td></tr><tr data-c="7"><td class="pos">12</td><td class="nm">Marko Ilančić<small class="nm-c"><span class="cls-name">Klasa</span> 7 · 1:10.278 + 1:10.680</small></td><td class="cl"><span class="cls-name">Klasa</span> 7</td><td class="r cp">2</td><td class="r tm">2:20.958</td><td class="r rn">1:10.278</td><td class="r rn">1:10.680</td><td class="r gp">+12.271</td></tr><tr data-c="1"><td class="pos">13</td><td class="nm">Milan Plavšić<small class="nm-c"><span class="cls-name">Klasa</span> 1 · 1:09.564 + 1:12.133</small></td><td class="cl"><span class="cls-name">Klasa</span> 1</td><td class="r cp">1</td><td class="r tm">2:21.697</td><td class="r rn">1:09.564</td><td class="r rn">1:12.133</td><td class="r gp">+13.010</td></tr><tr data-c="5"><td class="pos">14</td><td class="nm">Milisav Radosavljević<small class="nm-c"><span class="cls-name">Klasa</span> 5 · 1:12.091 + 1:14.138</small></td><td class="cl"><span class="cls-name">Klasa</span> 5</td><td class="r cp">3</td><td class="r tm">2:26.229</td><td class="r rn">1:12.091</td><td class="r rn">1:14.138</td><td class="r gp">+17.542</td></tr><tr data-c="2"><td class="pos">15</td><td class="nm">Zoran Jovanović<small class="nm-c"><span class="cls-name">Klasa</span> 2 · 1:14.494 + 1:17.928</small></td><td class="cl"><span class="cls-name">Klasa</span> 2</td><td class="r cp">3</td><td class="r tm">2:32.422</td><td class="r rn">1:14.494</td><td class="r rn">1:17.928</td><td class="r gp">+23.735</td></tr><tr data-c="4"><td class="pos">16</td><td class="nm">Novak Jovanović<small class="nm-c"><span class="cls-name">Klasa</span> 4 · 1:17.406 + 1:17.643</small></td><td class="cl"><span class="cls-name">Klasa</span> 4</td><td class="r cp">3</td><td class="r tm">2:35.049</td><td class="r rn">1:17.406</td><td class="r rn">1:17.643</td><td class="r gp">+26.362</td></tr><tr data-c="2"><td class="pos">17</td><td class="nm">Aleksandar Vatić<small class="nm-c"><span class="cls-name">Klasa</span> 2 · 1:18.900 + 1:19.233</small></td><td class="cl"><span class="cls-name">Klasa</span> 2</td><td class="r cp">4</td><td class="r tm">2:38.133</td><td class="r rn">1:18.900</td><td class="r rn">1:19.233</td><td class="r gp">+29.446</td></tr><tr data-c="2"><td class="pos">18</td><td class="nm">Milutin Karadžić<small class="nm-c"><span class="cls-name">Klasa</span> 2 · 1:20.323 + 1:22.204</small></td><td class="cl"><span class="cls-name">Klasa</span> 2</td><td class="r cp">5</td><td class="r tm">2:42.527</td><td class="r rn">1:20.323</td><td class="r rn">1:22.204</td><td class="r gp">+33.840</td></tr><tr data-c="7"><td class="pos">19</td><td class="nm">Lazar Stijović<small class="nm-c"><span class="cls-name">Klasa</span> 7 · 1:27.842 + 1:34.362</small></td><td class="cl"><span class="cls-name">Klasa</span> 7</td><td class="r cp">3</td><td class="r tm">3:02.204</td><td class="r rn">1:27.842</td><td class="r rn">1:34.362</td><td class="r gp">+53.517</td></tr><tr data-c="4"><td class="pos">20</td><td class="nm">Luka Prodanović<small class="nm-c"><span class="cls-name">Klasa</span> 4 · 1:16.003 + 1:52.080</small></td><td class="cl"><span class="cls-name">Klasa</span> 4</td><td class="r cp">4</td><td class="r tm">3:08.083</td><td class="r rn">1:16.003</td><td class="r rn">1:52.080</td><td class="r gp">+59.396</td></tr><tr data-c="3"><td class="pos">21</td><td class="nm">Dejan Rajčević<small class="nm-c"><span class="cls-name">Klasa</span> 3 · 1:39.196 + 1:39.358</small></td><td class="cl"><span class="cls-name">Klasa</span> 3</td><td class="r cp">5</td><td class="r tm">3:18.554</td><td class="r rn">1:39.196</td><td class="r rn">1:39.358</td><td class="r gp">+1:09.867</td></tr><tr data-c="8"><td class="pos">22</td><td class="nm">Dimitrije Ilić<small class="nm-c"><span class="cls-name">Klasa</span> 8 · 2:25.120 + 2:27.603</small></td><td class="cl"><span class="cls-name">Klasa</span> 8</td><td class="r cp">1</td><td class="r tm">4:52.723</td><td class="r rn">2:25.120</td><td class="r rn">2:27.603</td><td class="r gp">+2:44.036</td></tr><tr data-c="5"><td class="pos">—</td><td class="nm">Vojin Veličković<small class="nm-c"><span class="cls-name">Klasa</span> 5 · 1:07.924 / DNF</small></td><td class="cl"><span class="cls-name">Klasa</span> 5</td><td class="r cp">—</td><td class="r tm"><span class="st">DNF</span></td><td class="r rn">1:07.924</td><td class="r rn"><span class="st">DNF</span></td><td class="r gp"></td></tr><tr data-c="6"><td class="pos">—</td><td class="nm">Bojan Zeljković<small class="nm-c"><span class="cls-name">Klasa</span> 6 · 1:11.227 / DNF</small></td><td class="cl"><span class="cls-name">Klasa</span> 6</td><td class="r cp">—</td><td class="r tm"><span class="st">DNF</span></td><td class="r rn">1:11.227</td><td class="r rn"><span class="st">DNF</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Milan Plavšić<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:11.953 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:11.953</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Aleksandar Lučić<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:14.059 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:14.059</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Novak Jovanović<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:17.278 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:17.278</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="fica"><td class="pos">—</td><td class="nm">Bojan Filipović<small class="nm-c"><span class="cls-x" data-en="Fića Cup">Fića kup</span> · 1:21.056 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Fića Cup">Fića kup</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:21.056</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Dušan Albijanac<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:23.139 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:23.139</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="fica"><td class="pos">—</td><td class="nm">Savo Jančević<small class="nm-c"><span class="cls-x" data-en="Fića Cup">Fića kup</span> · 1:25.375 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Fića Cup">Fića kup</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:25.375</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Iva Živković<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:25.480 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:25.480</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Milan Petkov<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · 1:25.939 / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn">1:25.939</td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="nov"><td class="pos">—</td><td class="nm">Aleks Vatić<small class="nm-c"><span class="cls-x" data-en="Press">Novinar</span> · DNS / DNS</small></td><td class="cl"><span class="cls-x" data-en="Press">Novinar</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNS</span></td><td class="r rn"><span class="st">DNS</span></td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr><tr data-c="fica"><td class="pos">—</td><td class="nm">Milan Kostadinović<small class="nm-c"><span class="cls-x" data-en="Fića Cup">Fića kup</span> · DNF / DNS</small></td><td class="cl"><span class="cls-x" data-en="Fića Cup">Fića kup</span></td><td class="r cp">—</td><td class="r tm"><span class="st">DNF</span></td><td class="r rn"><span class="st">DNF</span></td><td class="r rn"><span class="st">DNS</span></td><td class="r gp"></td></tr></tbody></table></div>
+    <p class="rs-note" data-i18n="rs0_note">Ukupno vreme je zbir 1. i 2. vožnje. Ako je bilo koja vožnja DNS ili DNF, i ukupni rezultat je DNS ili DNF. DNS: nije startovao. DNF: nije završio.</p>
+    <p class="rs-dl"><a href="rezultati/rejsing-sopot-2026-10-11.pdf" download data-i18n="rs_pdf">Preuzmi zvanične rezultate (PDF)</a></p>
+  </div>
+</section>
+
 <!-- ================= RESULTS: Sajam Novi Sad, 5.9.2026 ================= -->
 <section class="sheet results-sheet" id="rezultati-novi-sad" aria-labelledby="rs-title">
   <div class="sheet-in rs-in">
@@ -1014,7 +1032,12 @@ a{color:inherit}
     rs_th1:"Pos", rs_th2:"Driver", rs_th3:"Class", rs_th4:"In class", rs_th5:"Time", rs_th6:"Gap",
     rs_note:"Times include penalty seconds. An asterisk (*) marks a run that was stopped, where the penalty time is the whole result. DNS: did not start. DNF: did not finish.",
     rs_pdf:"Download the official results (PDF)", rl1:"See the results", dt2b:"Fastest time", dt4:"Classes",
+    r0:"Sopot", r0d:"Sunday 11 October 2026, Sopot", c_empty:"We will announce the next races soon. Follow us on Instagram.",
+    rs0_sub:"Sunday 11 October 2026. 31 drivers, 10 classes. The total is the sum of two runs.", rs_th7:"Total", rs_th8:"Run 1", rs_th9:"Run 2",
+    rs0_note:"The total time is Run 1 plus Run 2. If either run is DNS or DNF, the total is DNS or DNF too. DNS: did not start. DNF: did not finish.",
     r1:"Novi Sad Fair", r1d:"Saturday 5 September 2026, Novi Sad", r2:"Bačka Palanka", r2d:"Sunday 19 July 2026, Bačka Palanka",
+    g5:"Through the tyres", g6:"Fića in the wet", g7:"Golf in the fog", g8:"The results screen",
+    alt_sp_stilo:"Fiat Stilo coming out of a corner on the wet track in Sopot", alt_sp_fica:"Fiat 600 race car number 68 between the tyre stacks in Sopot", alt_sp_golf:"VW Golf Mk1 on track in the fog in Sopot", alt_sp_stand:"Timing tent with the results screen in Sopot",
     g1:"The corner", g2:"Flat out", g3:"Classic against the clock", g4:"Prize giving",
     alt_bmw:"BMW E36 cornering at the race at the Novi Sad Fair", alt_golf:"VW Golf on track at the Novi Sad Fair", alt_yugo:"Yugo passing the tyre barrier at the Novi Sad Fair", alt_toy:"Winners' trophies in front of a car at the race in Bačka Palanka",
     lap_lbl:"Lap", last_lbl:"Last", best_lbl:"Best", readout:"Simulated live lap timing",
@@ -1050,14 +1073,13 @@ a{color:inherit}
     f6:"Classes and penalties", f6p:"Several classes in one race, with time penalties applied straight into the classification.",
     scr_aria:"Example of the live timing screen", live:"Live", scr_s:"Session 2, 12 drivers", th1:"Pos", th2:"Car", th3:"Driver", th4:"Lap time", th5:"Gap",
     scr_f1:"Fastest time: car 27", scr_f2:"Export: PDF, CSV, XLSX",
-    in_h:"Always developing something new", in_p:"We keep adding new ways to measure time and improving the system. Every race we time gives us an idea for the next improvement.",
     of_h:"Rent or buy our system", of1:"Rent", of1p:"We come to your race with the complete setup and an operator. You race, we keep the time.", of1a:"Ask for a rental quote",
     of2:"Buy", of2p:"Buy the complete system for your circuit or club, with training and support.", of2a:"Ask for a purchase quote",
     r_h:"Latest races", r_p:"Results, fastest laps and photos from the races we timed most recently.",
        
     dt1:"Drivers", dt2:"Fastest lap", dt3:"Gap 1st to 2nd",  rl2:"Photos",
     c_h:"Next on the timing sheet", c_p:"Races we are booked to time. Live times open here on race day.",
-    c1d:"11 Oct", c1w:"Sunday, 2026", c1:"Sopot", c1p:"Timing by Rejsing", venue:"Circuit name, city", cd_s:"until the start",
+    venue:"Circuit name, city", cd_s:"until the start",
     c2d:"8 Nov", c2:"Night Sprint", c2p:"Sprint races under floodlights", c3d:"28 Mar", c3w:"Sunday, 2027", c3:"Season opener 2027", c3p:"Date to be confirmed by the organiser",
     c_note:'Organising a race? <a href="#contact">Book us for your date</a>',
     g_h:"From the track",   g_r3:"Round 3",  g_ss:"Summer Sprint",  g5:"Photo finish",
@@ -1091,6 +1113,7 @@ a{color:inherit}
     ariaNodes.forEach(function(n){ var k=n.getAttribute('data-i18n-aria'); n.setAttribute('aria-label', l==='en' ? EN[k] : SRA[k]); });
     altNodes.forEach(function(n){ var k=n.getAttribute('data-i18n-alt'); n.setAttribute('alt', l==='en' ? EN[k] : SRALT[k]); });
     document.querySelectorAll('.cls-name').forEach(function(n){ n.textContent = l==='en' ? 'Class' : 'Klasa'; });
+    document.querySelectorAll('.cls-x').forEach(function(n){ if (!n.hasAttribute('data-sr')) n.setAttribute('data-sr', n.textContent); n.textContent = n.getAttribute(l==='en' ? 'data-en' : 'data-sr'); });
     document.title = META[l].title;
     document.querySelector('meta[name="description"]').content = META[l].desc;
     document.getElementById('flagEn').style.display = l==='en' ? 'none' : 'block';
@@ -1176,21 +1199,23 @@ a{color:inherit}
   tick();
 
 
-  // results sheet: tabs + class filter
-  var rsTabs = document.querySelectorAll('.rs-tab'), rsTables = document.querySelectorAll('.rs-table'), rsChips = document.querySelectorAll('.rs-chip');
-  var rsT = 'race', rsC = 'all';
-  function rsApply(){
-    rsTabs.forEach(function(t){ t.classList.toggle('on', t.getAttribute('data-t')===rsT); t.setAttribute('aria-selected', t.getAttribute('data-t')===rsT); });
-    rsChips.forEach(function(ch){ ch.classList.toggle('on', ch.getAttribute('data-c')===rsC); });
-    rsTables.forEach(function(tb){
-      tb.hidden = tb.getAttribute('data-t')!==rsT;
-      tb.querySelectorAll('tbody tr').forEach(function(r){ r.hidden = rsC!=='all' && r.getAttribute('data-c')!==rsC; });
-    });
-  }
-  rsTabs.forEach(function(t){ t.addEventListener('click', function(){ rsT = t.getAttribute('data-t'); rsApply(); }); });
-  rsChips.forEach(function(ch){ ch.addEventListener('click', function(){ rsC = ch.getAttribute('data-c'); rsApply(); }); });
-  rsApply();
-  document.addEventListener('keydown', function(e){ if (e.key==='Escape' && location.hash==='#rezultati-novi-sad') location.hash = 'races'; });
+  // results sheets: tabs + class filter (each sheet on its own)
+  document.querySelectorAll('.results-sheet').forEach(function(sh){
+    var rsTabs = sh.querySelectorAll('.rs-tab'), rsTables = sh.querySelectorAll('.rs-table'), rsChips = sh.querySelectorAll('.rs-chip');
+    var rsT = rsTabs.length ? rsTabs[0].getAttribute('data-t') : null, rsC = 'all';
+    function rsApply(){
+      rsTabs.forEach(function(t){ t.classList.toggle('on', t.getAttribute('data-t')===rsT); t.setAttribute('aria-selected', t.getAttribute('data-t')===rsT); });
+      rsChips.forEach(function(ch){ ch.classList.toggle('on', ch.getAttribute('data-c')===rsC); });
+      rsTables.forEach(function(tb){
+        tb.hidden = rsT!==null && tb.getAttribute('data-t')!==rsT;
+        tb.querySelectorAll('tbody tr').forEach(function(r){ r.hidden = rsC!=='all' && r.getAttribute('data-c')!==rsC; });
+      });
+    }
+    rsTabs.forEach(function(t){ t.addEventListener('click', function(){ rsT = t.getAttribute('data-t'); rsApply(); }); });
+    rsChips.forEach(function(ch){ ch.addEventListener('click', function(){ rsC = ch.getAttribute('data-c'); rsApply(); }); });
+    rsApply();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key==='Escape' && location.hash.indexOf('#rezultati-')===0) location.hash = 'races'; });
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
